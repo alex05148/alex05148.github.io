@@ -4,8 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, alex05148&#39;s home">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="一个c++词典小程序, alex05148&#39;s home">
+    <meta name="description" content=" 一个c++词典小程序
+
+  暑假利用空闲时间写了个电子词典程序，写完感觉熟练了很多c++方面的知识，本次就写一下关于我设计的这个程序的过程和感想。
+  首先我们来看看这道题的要求：
+设计一个简单的电子英汉词典，实现单词的添加、显示、查找、">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,8 +22,17 @@
 
 
     
+    <style>
+        body{
+            background-image: url(/assets/preview.jpg);
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+    </style>
 
-    <title>Hello World | alex05148&#39;s home</title>
+
+    <title>一个c++词典小程序 | alex05148&#39;s home</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -129,6 +142,49 @@
     
   </li>
   
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>Medias</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Musics</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Books</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Galleries</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -230,6 +286,51 @@
           
         </li>
         
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			Medias
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/musics " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Musics</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/books " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Books</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/galleries " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Galleries</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
         
         <li><div class="divider"></div></li>
         <li>
@@ -309,12 +410,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">一个c++词典小程序</h1>
                 </div>
             </div>
         </div>
@@ -428,9 +529,17 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/c/">
+                                <span class="chip bg-color">c++</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%AF%BE%E8%AE%BE/">
+                                <span class="chip bg-color">课设</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -442,7 +551,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-07-15
+                    2022-07-17
                 </div>
                 
 
@@ -463,19 +572,238 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+                 <h1 align = "center">一个c++词典小程序</h1>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>  暑假利用空闲时间写了个电子词典程序，写完感觉熟练了很多c++方面的知识，本次就写一下关于我设计的这个程序的过程和感想。</p>
+<p>  首先我们来看看这道题的要求：</p>
+<p>设计一个简单的电子英汉词典，实现单词的添加、显示、查找、删除、修改和保存等，采用<br>结构体数组，每个数据的结构应当包括：单词的英文拼写，单词的中文释义。具体功能如下：<br>(1) 词条录入：添加单词记录；<br>(2) 信息显示：将所有的单词按字母顺序显示；<br>(3) 词条修改：对已经输入的单词信息进行修改；<br>(4) 词条删除：删除某个单词记录；<br>(5) 英汉查询: 输入英文单词，输出其中文释义；<br>(6) 汉英查询: 输入中文单词，输出其英文释义；<br>(7) 信息保存：将单词信息保存到文件。<br>(8) 退出系统<br>要求：用来测试的词库至少要有 30 个单词左右，以简单单词为主。执行一个具体的功能之<br>后，程序将重新显示功能菜单。系统的功能并不限于上述，可以对其进行扩充完善，如在对<br>信息进行修改和删除时，可以考虑系统的安全性，在执行前若输入正确密码，才可进行操。</p>
+<p>首先通过读题我们可以知道本题逻辑上并不复杂，但是由于要实现的功能众多，导致程序的结构分支会非常多，所以说实现起来会有点耗时间。首先通过题目可以知道本题要使用的c++知识有：类，文件流的输入输出，string型，以及使逻辑清晰的switch语句。我的想法是通过switch语句分模块分别实现上述内容。</p>
+<p>  本题多数内容不是太复杂，就先来说说我在设计时碰到的问题吧。</p>
+<p>1.如何输入txt文件词库中的所有单词，并统计单词个数。</p>
+<p><img src="C:/Users/ASUS/Pictures/Saved%20Pictures/d63a5f3dca80092df389a48d74c842c.png"></p>
+<p>我使用了上述方法，说实话这步我想了很久才想到可以这么实现，简述一下就是我创建了一个空的string型的q[i]数组，因为ji[i]数组里输入了文件内的单词，没被分配到单词的ji[i]数组为空，于是比较两者，不为空的ji[i]数组就是赋过单词的。于是统计出了词库中的单词个数，并一一输出到屏幕上。</p>
+<p>2.如何通过首字母，将所有单词排序，在输出到屏幕上。</p>
+<p><img src="C:/Users/ASUS/Pictures/Saved%20Pictures/4b5ad5ca10bedfa0b08aaec6e6d658f.png"></p>
+<p>我使用了比较原始的冒泡排序，但是实现过程一开始想了挺久，因为要使用首字母排序。我最终采取的方法是给每个单词类的英文的首字母赋值给一个char数组as[i],然后通过对as[i]的排序，间接给所有的单词类的中英文排序。</p>
+<p>3.最后文件的保存，每次运行完程序后或多或少都会改变单词个数或更改单词中英文，那么每次运行后如何在原有的txt文档内容下改变与保存新的文档内容？</p>
+<p><img src="C:/Users/ASUS/Pictures/Saved%20Pictures/60f9aee916bf2728a3a5c8dc7655f37.png"></p>
+<p>我经过考虑后决定删除原文件，相比替换，更改，覆盖等其他方法，在实现上在本题的情况下删除是最快速的方法。每次运行后删除运行前文件，结束保存时再创建新的文件并输入。就达到了每次运行完程序后或多或少都会改变单词个数或更改单词中英文的目的。</p>
+<p>最终代码：</p>
+<p>#include<iostream><br>#include <string><br>#include <fstream><br>using namespace std;<br>class Dictionary<br>{<br>public:<br>    string en;<br>    string cn;<br>};<br>int main()<br>{<br>    int p&#x3D;0,zi&#x3D;0;<br>    static Dictionary s[200] &#x3D; {};<br>    static string ji[200],q[200]&#x3D;{};<br>    fstream f(“dataFile.txt”, ofstream::app);<br>    f.close();<br>    f.open(“dataFile.txt”, ios::in);<br>    for (int i &#x3D; 0; i &lt; 200; i++)<br>    {<br>        f &gt;&gt;ji[i];</p>
+<pre><code>&#125;
+for (int i = 0; i &lt; 200; i++)
+&#123;
+    if (ji[i] != q[i])
+    &#123;
+        zi++;
+    &#125;
+&#125;
+p = zi / 2;
+int nb = p;
+cout &lt;&lt; &quot;现词库拥有单词个数：&quot; &lt;&lt; p&lt;&lt;endl;
+for (int i = 0; i &lt; p; i++)
+&#123;
+    s[i].en = ji[2 * i];
+&#125;
+for (int i = 0; i &lt; p; i++)
+&#123;
+   s[i].cn = ji[2 * i + 1];
+&#125;
+for (int i = 0; i &lt; p; i++)
+&#123;
+    cout &lt;&lt; s[i].en &lt;&lt; &quot; &quot; &lt;&lt; s[i].cn &lt;&lt; endl;
+&#125;
+f.close();
+for (int i = p; ; i++)
+&#123; 
+    int xi;
+    cout &lt;&lt; &quot;请输入单词的英文：&quot;;
+    cin &gt;&gt; s[i].en;
+    cout &lt;&lt; &quot;请输入单词的中文：&quot;;
+    cin &gt;&gt; s[i].cn;
+    p++; 
+    cout &lt;&lt; &quot;输入1停止添加,输入2继续添加&quot;;
+    cin &gt;&gt; xi;
+    if(xi==1)
+    break;
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+&#125;
+cout &lt;&lt; &quot;(1) 词条录入：添加单词记录；&quot;&lt;&lt;endl;
+cout &lt;&lt; &quot;(2) 信息显示：将所有的单词按字母顺序显示；&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;(3) 词条修改：对已经输入的单词信息进行修改；&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;(4) 词条删除：删除某个单词记录；&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;(5) 英汉查询: 输入英文单词，输出其中文释义；&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;(6) 汉英查询: 输入中文单词，输出其英文释义；&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;(7) 信息保存：将单词信息保存到文件。&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;(8) 退出系统&quot;&lt;&lt;endl;
+int x,i,d;
+for (i = 0;; i++)
+&#123;
+    cout &lt;&lt; &quot;请输入指令1-8：&quot;;
+    cin &gt;&gt; x;
+    if (x == 8)break;
+    else
+        d = x;
+    switch (d)
+    &#123;
+    case 1:
+    &#123;int o;
+    for (int i = 0;; i++)
+    &#123;
+        cout &lt;&lt; &quot;按1并确认，进行添加；按2键并确认，完成添加&quot;;
+        cin &gt;&gt; o;
+        if (o == 1)
+        &#123;
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+            cout &lt;&lt; &quot;请输入添加词：&quot;;
+            cin &gt;&gt; s[p + i].en;
+            cout &lt;&lt; &quot;请输入添加词中文：&quot;;
+            cin &gt;&gt; s[p + i].cn;
+            p++;
+        &#125;
+        else break;
+    &#125;
+    &#125;
+    break;
+    case 2:
+    &#123;
+        char as[200] = &#123;&#125;;
+        for (int i = 0; i &lt;= p; i++)
+        &#123;
+            as[i]= s[i].en[0];
+        &#125;
+    for (int i = 0; i &lt; p; i++)
+        for (int j = 0; j &lt; p - i; j++)
+        &#123;
+            string t,z;
+            char qi;
+            if (as[j]&gt;as[j+1])
+            &#123;
+                qi = as[j + 1];		           t = s[j + 1].en;            z = s[j + 1].cn;
+                as[j + 1] = as[j];         s[j + 1].en = s[j].en;      s[j + 1].cn = s[j].cn;
+                as[j] = qi;                            s[j].en = t;               s[j].cn = z;
+                
+            &#125;
+        &#125;
+    cout &lt;&lt; &quot;排序后单词为:&quot;;
+    for (int i = 0; i &lt;= p+1; i++)
+    &#123;
+        cout &lt;&lt; s[i].en &lt;&lt; &quot; &quot; &lt;&lt; s[i].cn&lt;&lt;&quot; &quot;;
+    &#125;
+    &#125;break;
+    case 3:
+    &#123;int an;
+    string mi, ha, hb;
+    string mima = &quot;123&quot;;
+    cout &lt;&lt; &quot;请输入密码：&quot;;
+    cin &gt;&gt; mi;
+    if (mi == mima)
+    &#123;
+        cout &lt;&lt; &quot;排序后单词为:&quot;;
+        for (int i = 0; i &lt;= p; i++)
+        &#123;
+            cout &lt;&lt; s[i].en &lt;&lt; &quot; &quot; &lt;&lt; s[i].cn;
+        &#125;
+        cout &lt;&lt; &quot;请输入要修改单词，修改英文请输入1并确认，修改中文请输入2并确认&quot;;
+        cin &gt;&gt; an;
+        if (an == 1)
+        &#123;
+            cout &lt;&lt; &quot;请输入要修改的单词英文：&quot;;
+            cin &gt;&gt; ha;
+            for (int i = 0; i &lt;= p; i++)
+            &#123;
+                if (ha == s[i].en)
+                &#123;
+                    string la;
+                    cout &lt;&lt; &quot;请输入修改后单词的英文：&quot;;
+                    cin &gt;&gt; la;
+                    s[i].en = la;
+                &#125;
+            
+            &#125;
+            cout &lt;&lt; &quot;修改成功&quot;;
+        &#125;
+        if (an == 2)
+        &#123;
+            cout &lt;&lt; &quot;请输入要修改单词中文：&quot;;
+            cin &gt;&gt; hb;
+            for (int i = 0; i &lt;= p; i++)
+            &#123;
+                if (hb == s[i].cn)
+                &#123;
+                    string lb;
+                    cout &lt;&lt; &quot;请输入修改后单词的中文：&quot;;
+                    cin &gt;&gt; lb;
+                    s[i].cn = lb;
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+    &#125;break;
+    case 4:
+    &#123;
+    string mi, hc;
+    string mima = &quot;123&quot;;
+    cout &lt;&lt; &quot;请输入密码：&quot;;
+    cin &gt;&gt; mi;
+    if (mi == mima)
+    &#123;
+        cout &lt;&lt; &quot;请输入要删除的单词：&quot;;
+        cin &gt;&gt; hc;
+        for (int i = 0; i &lt;= p; i++)
+        &#123;
+            if (hc == s[i].en)
+            &#123;
+                string tp = &quot;&quot;;
+                s[i].en = tp;
+                s[i].cn = tp;
+                cout &lt;&lt; &quot;完成删除&quot;;
+            &#125;
+        &#125;
+    &#125;
+    &#125;
+    case 5:
+    &#123;
+        string ni;
+        cout &lt;&lt; &quot;请输入查询单词英文：&quot;;
+        cin &gt;&gt; ni;
+        for (int i = 0; i &lt;= p; i++)
+        &#123;
+            if (ni == s[i].en)
+            &#123;
+                cout &lt;&lt; &quot;查询单词的中文释义为：&quot; &lt;&lt; s[i].cn;
+            &#125;
+        &#125;
+    &#125;break;
+    case 6:
+    &#123;
+        string no;
+        cout &lt;&lt; &quot;请输入查询单词中文：&quot;;
+        cin &gt;&gt; no;
+        for (int i = 0; i &lt;= p; i++)
+        &#123;
+            if (no == s[i].cn)
+            &#123;
+                cout &lt;&lt; &quot;查询单词的英文为：&quot; &lt;&lt; s[i].en;
+            &#125;
+        &#125;
+    &#125;break;
+    case 7:
+    &#123;
+        remove(&quot;dataFile.txt&quot;);
+        ofstream dataFile;
+        dataFile.open(&quot;dataFile.txt&quot;, ofstream::app);
+        for (int i = 0; i &lt; p; i++)
+        &#123;
+            dataFile  &lt;&lt; s[i].en &lt;&lt; &quot;\n&quot;
+                &lt;&lt; s[i].cn &lt;&lt; endl;
+        &#125;
+    &#125;
+    &#125;
+&#125;
+return 0;
+</code></pre>
+<p>}</p>
 
                 
             </div>
@@ -502,7 +830,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/alex05148/alex05148.github.io/project/%5Bobject%20Object%5D/2022/07/15/hello-world/">https://github.com/alex05148/alex05148.github.io/project/%5Bobject%20Object%5D/2022/07/15/hello-world/</a>
+                    <a href="https://github.com/alex05148/alex05148.github.io/project/%5Bobject%20Object%5D/2022/07/17/%E7%94%B5%E5%AD%90%E8%AF%8D%E5%85%B8/">https://github.com/alex05148/alex05148.github.io/project/%5Bobject%20Object%5D/2022/07/17/%E7%94%B5%E5%AD%90%E8%AF%8D%E5%85%B8/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -539,7 +867,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/c/">
+                                    <span class="chip bg-color">c++</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%AF%BE%E8%AE%BE/">
+                                    <span class="chip bg-color">课设</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -711,33 +1047,30 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/%5Bobject%20Object%5D/2022/07/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
+                <a href="/%5Bobject%20Object%5D/2022/07/17/%E7%94%B5%E5%AD%90%E8%AF%8D%E5%85%B8/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="我的第一篇博客">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="一个c++词典小程序">
                         
-                        <span class="card-title">我的第一篇博客</span>
+                        <span class="card-title">一个c++词典小程序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            前言使用github pages服务搭建博客的好处有：
-
-全是静态文件，访问速度快；
-免费方便，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器不需要后台；
-可以随意绑定自己的域名，不仔细看的话根本看不出来你的网站是基于github的
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -746,11 +1079,16 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/wcy/">
-                        <span class="chip bg-color">wcy</span>
+                    <a href="/tags/c/">
+                        <span class="chip bg-color">c++</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AF%BE%E8%AE%BE/">
+                        <span class="chip bg-color">课设</span>
                     </a>
                     
                 </div>
@@ -761,16 +1099,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/%5Bobject%20Object%5D/2022/07/15/hello-world/">
+                <a href="/%5Bobject%20Object%5D/2022/07/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="我的第一篇博客">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">我的第一篇博客</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -791,7 +1129,14 @@
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%85%B3%E4%BA%8E%E6%88%91/">
+                        <span class="chip bg-color">关于我</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1005,7 +1350,7 @@
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <a href="https://github.com/alex05148" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
 
@@ -1163,6 +1508,15 @@ $(function () {
 
     
 
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
     
 
     <!-- 雪花特效 -->
