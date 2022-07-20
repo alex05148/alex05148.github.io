@@ -4,12 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="一个c++词典小程序, alex05148&#39;s home">
-    <meta name="description" content=" 一个c++词典小程序
+    <meta name="keywords" content="C++ 中数组和vector, alex05148&#39;s home">
+    <meta name="description" content="C++ 中数组和vector
 
-  暑假利用空闲时间写了个电子词典程序，写完感觉熟练了很多c++方面的知识，本次就写一下关于我设计的这个程序的过程和感想。
-  首先我们来看看这道题的要求：
-设计一个简单的电子英汉词典，实现单词的添加、显示、查找、">
+我们在设计程序的时候有没有想过数组和vector(容器)该何时用，那个更好，或是这二者到底有何区别，该如何取舍呢？在查阅一下资料后我总结如下：
+数组： 固定长度，使用栈，效率快，但没有模板，不安全，使用不方便">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -32,7 +31,7 @@
     </style>
 
 
-    <title>一个c++词典小程序 | alex05148&#39;s home</title>
+    <title>C++ 中数组和vector | alex05148&#39;s home</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -410,12 +409,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">一个c++词典小程序</h1>
+                    <h1 class="description center-align post-title">C++ 中数组和vector</h1>
                 </div>
             </div>
         </div>
@@ -535,10 +534,6 @@
                                 <span class="chip bg-color">c++</span>
                             </a>
                         
-                            <a href="/tags/%E8%AF%BE%E8%AE%BE/">
-                                <span class="chip bg-color">课设</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -551,7 +546,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-07-17
+                    2022-07-20
                 </div>
                 
 
@@ -572,28 +567,50 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                 <h1 align = "center">一个c++词典小程序</h1>
+                <h1 align = "center">C++ 中数组和vector</h1>
 
-<p>  暑假利用空闲时间写了个电子词典程序，写完感觉熟练了很多c++方面的知识，本次就写一下关于我设计的这个程序的过程和感想。</p>
-<p>  首先我们来看看这道题的要求：</p>
-<p>设计一个简单的电子英汉词典，实现单词的添加、显示、查找、删除、修改和保存等，采用<br>结构体数组，每个数据的结构应当包括：单词的英文拼写，单词的中文释义。具体功能如下：<br>(1) 词条录入：添加单词记录；<br>(2) 信息显示：将所有的单词按字母顺序显示；<br>(3) 词条修改：对已经输入的单词信息进行修改；<br>(4) 词条删除：删除某个单词记录；<br>(5) 英汉查询: 输入英文单词，输出其中文释义；<br>(6) 汉英查询: 输入中文单词，输出其英文释义；<br>(7) 信息保存：将单词信息保存到文件。<br>(8) 退出系统<br>要求：用来测试的词库至少要有 30 个单词左右，以简单单词为主。执行一个具体的功能之<br>后，程序将重新显示功能菜单。系统的功能并不限于上述，可以对其进行扩充完善，如在对<br>信息进行修改和删除时，可以考虑系统的安全性，在执行前若输入正确密码，才可进行操。</p>
-<p>首先通过读题我们可以知道本题逻辑上并不复杂，但是由于要实现的功能众多，导致程序的结构分支会非常多，所以说实现起来会有点耗时间。首先通过题目可以知道本题要使用的c++知识有：类，文件流的输入输出，string型，以及使逻辑清晰的switch语句。我的想法是通过switch语句分模块分别实现上述内容。</p>
-<p>  本题多数内容不是太复杂，就先来说说我在设计时碰到的问题吧。</p>
-<p>1.如何输入txt文件词库中的所有单词，并统计单词个数。</p>
-<p><img src="https://scontent-hkg4-2.xx.fbcdn.net/v/t39.30808-6/292721871_116178721156184_1395721737295585480_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=730e14&_nc_ohc=f__VKF1Ab-0AX9v4Uu9&_nc_ht=scontent-hkg4-2.xx&oh=00_AT-BlQI3GM42HajxVH0sYqLM4XUgIa2_wOOQ4ah3PuVaIg&oe=62D99890"></p>
-<p>我使用了上述方法，说实话这步我想了很久才想到可以这么实现，简述一下就是我创建了一个空的string型的q[i]数组，因为ji[i]数组里输入了文件内的单词，没被分配到单词的ji[i]数组为空，于是比较两者，不为空的ji[i]数组就是赋过单词的。于是统计出了词库中的单词个数，并一一输出到屏幕上。</p>
-<p>2.如何通过首字母，将所有单词排序，在输出到屏幕上。</p>
-<p><img src="https://scontent-hkg4-1.xx.fbcdn.net/v/t39.30808-6/294118952_116179081156148_7994955348224490567_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_ohc=hZiBZQDXrZsAX-8hXhX&_nc_ht=scontent-hkg4-1.xx&oh=00_AT80JvCXLbiW3oXQBoNkj1o91K3fdy5D1Jv_5rVwf1H3dA&oe=62D94572"></p>
-<p>  我使用了比较原始的冒泡排序，但是实现过程一开始想了挺久，因为要使用首字母排序。我最终采取的方法是给每个单词类的英文的首字母赋值给一个char数组as[i],然后通过对as[i]的排序，间接给所有的单词类的中英文排序。</p>
-<p>3.最后文件的保存，每次运行完程序后或多或少都会改变单词个数或更改单词中英文，那么每次运行后如何在原有的txt文档内容下改变与保存新的文档内容？</p>
-<p><img src="https://scontent-hkg4-1.xx.fbcdn.net/v/t39.30808-6/293873326_116179247822798_5758894103570412545_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=730e14&_nc_ohc=CA_sQt0S-fwAX_68eWa&_nc_ht=scontent-hkg4-1.xx&oh=00_AT9P5j9NusrElHSJ2lWTQHe0u52T6c86_85oYOFuV92Mdg&oe=62D8370F"></p>
-<p>  我经过考虑后决定删除原文件，相比替换，更改，覆盖等其他方法，在实现上在本题的情况下删除是最快速的方法。每次运行后删除运行前文件，结束保存时再创建新的文件并输入。就达到了每次运行完程序后或多或少都会改变单词个数或更改单词中英文的目的。</p>
-<p>最终代码：</p>
-<p>#include ‘iostream’<br>#include ‘string’<br>#include ‘fstream’<br>using namespace std;<br>class Dictionary<br>{<br>public:<br>    string en;<br>    string cn;<br>};<br>int main()<br>{<br>    int p&#x3D;0,zi&#x3D;0;<br>    static Dictionary s[200] &#x3D; {};<br>    static string ji[200],q[200]&#x3D;{};<br>    fstream f(“dataFile.txt”, ofstream::app);<br>    f.close();<br>    f.open(“dataFile.txt”, ios::in);<br>    for (int i &#x3D; 0; i &lt; 200; i++)<br>    {<br>        f &gt;&gt;ji[i];</p>
-<p>}<br>for (int i &#x3D; 0; i &lt; 200; i++)<br>{<br>    if (ji[i] !&#x3D; q[i])<br>    {<br>        zi++;<br>    }<br>}<br>p &#x3D; zi &#x2F; 2;<br>int nb &#x3D; p;<br>cout &lt;&lt; “现词库拥有单词个数：” &lt;&lt; p&lt;&lt;endl;<br>for (int i &#x3D; 0; i &lt; p; i++)<br>{<br>    s[i].en &#x3D; ji[2 * i];<br>}<br>for (int i &#x3D; 0; i &lt; p; i++)<br>{<br>   s[i].cn &#x3D; ji[2 * i + 1];<br>}<br>for (int i &#x3D; 0; i &lt; p; i++)<br>{<br>    cout &lt;&lt; s[i].en &lt;&lt; “ “ &lt;&lt; s[i].cn &lt;&lt; endl;<br>}<br>f.close();<br>for (int i &#x3D; p; ; i++)<br>{<br>    int xi;<br>    cout &lt;&lt; “请输入单词的英文：”;<br>    cin &gt;&gt; s[i].en;<br>    cout &lt;&lt; “请输入单词的中文：”;<br>    cin &gt;&gt; s[i].cn;<br>    p++;<br>    cout &lt;&lt; “输入1停止添加,输入2继续添加”;<br>    cin &gt;&gt; xi;<br>    if(xi&#x3D;&#x3D;1)<br>    break;</p>
-<p>}<br>cout &lt;&lt; “(1) 词条录入：添加单词记录；”&lt;&lt;endl;<br>cout &lt;&lt; “(2) 信息显示：将所有的单词按字母顺序显示；” &lt;&lt; endl;<br>cout &lt;&lt; “(3) 词条修改：对已经输入的单词信息进行修改；” &lt;&lt; endl;<br>cout &lt;&lt; “(4) 词条删除：删除某个单词记录；” &lt;&lt; endl;<br>cout &lt;&lt; “(5) 英汉查询: 输入英文单词，输出其中文释义；” &lt;&lt; endl;<br>cout &lt;&lt; “(6) 汉英查询: 输入中文单词，输出其英文释义；” &lt;&lt; endl;<br>cout &lt;&lt; “(7) 信息保存：将单词信息保存到文件。” &lt;&lt; endl;<br>cout &lt;&lt; “(8) 退出系统”&lt;&lt;endl;<br>int x,i,d;<br>for (i &#x3D; 0;; i++)<br>{<br>    cout &lt;&lt; “请输入指令1-8：”;<br>    cin &gt;&gt; x;<br>    if (x &#x3D;&#x3D; 8)break;<br>    else<br>        d &#x3D; x;<br>    switch (d)<br>    {<br>    case 1:<br>    {int o;<br>    for (int i &#x3D; 0;; i++)<br>    {<br>        cout &lt;&lt; “按1并确认，进行添加；按2键并确认，完成添加”;<br>        cin &gt;&gt; o;<br>        if (o &#x3D;&#x3D; 1)<br>        {</p>
-<p>​			cout &lt;&lt; “请输入添加词：”;<br>​			cin &gt;&gt; s[p + i].en;<br>​			cout &lt;&lt; “请输入添加词中文：”;<br>​			cin &gt;&gt; s[p + i].cn;<br>​			p++;<br>​		}<br>​		else break;<br>​	}<br>​	}<br>​	break;<br>​	case 2:<br>​	{<br>​		char as[200] &#x3D; {};<br>​		for (int i &#x3D; 0; i &lt;&#x3D; p; i++)<br>​		{<br>​			as[i]&#x3D; s[i].en[0];<br>​		}<br>​	for (int i &#x3D; 0; i &lt; p; i++)<br>​		for (int j &#x3D; 0; j &lt; p - i; j++)<br>​		{<br>​			string t,z;<br>​			char qi;<br>​			if (as[j]&gt;as[j+1])<br>​			{<br>​				qi &#x3D; as[j + 1];		           t &#x3D; s[j + 1].en;            z &#x3D; s[j + 1].cn;<br>​				as[j + 1] &#x3D; as[j];         s[j + 1].en &#x3D; s[j].en;      s[j + 1].cn &#x3D; s[j].cn;<br>​				as[j] &#x3D; qi;                            s[j].en &#x3D; t;               s[j].cn &#x3D; z;<br>​				<br>​			}<br>​		}<br>​	cout &lt;&lt; “排序后单词为:”;<br>​	for (int i &#x3D; 0; i &lt;&#x3D; p+1; i++)<br>​	{<br>​		cout &lt;&lt; s[i].en &lt;&lt; “ “ &lt;&lt; s[i].cn&lt;&lt;” “;<br>​	}<br>​	}break;<br>​	case 3:<br>​	{int an;<br>​	string mi, ha, hb;<br>​	string mima &#x3D; “123”;<br>​	cout &lt;&lt; “请输入密码：”;<br>​	cin &gt;&gt; mi;<br>​	if (mi &#x3D;&#x3D; mima)<br>​	{<br>​		cout &lt;&lt; “排序后单词为:”;<br>​		for (int i &#x3D; 0; i &lt;&#x3D; p; i++)<br>​		{<br>​			cout &lt;&lt; s[i].en &lt;&lt; “ “ &lt;&lt; s[i].cn;<br>​		}<br>​		cout &lt;&lt; “请输入要修改单词，修改英文请输入1并确认，修改中文请输入2并确认”;<br>​		cin &gt;&gt; an;<br>​		if (an &#x3D;&#x3D; 1)<br>​		{<br>​			cout &lt;&lt; “请输入要修改的单词英文：”;<br>​			cin &gt;&gt; ha;<br>​			for (int i &#x3D; 0; i &lt;&#x3D; p; i++)<br>​			{<br>​				if (ha &#x3D;&#x3D; s[i].en)<br>​				{<br>​					string la;<br>​					cout &lt;&lt; “请输入修改后单词的英文：”;<br>​					cin &gt;&gt; la;<br>​					s[i].en &#x3D; la;<br>​				}<br>​			<br>​			}<br>​			cout &lt;&lt; “修改成功”;<br>​		}<br>​		if (an &#x3D;&#x3D; 2)<br>​		{<br>​			cout &lt;&lt; “请输入要修改单词中文：”;<br>​			cin &gt;&gt; hb;<br>​			for (int i &#x3D; 0; i &lt;&#x3D; p; i++)<br>​			{<br>​				if (hb &#x3D;&#x3D; s[i].cn)<br>​				{<br>​					string lb;<br>​					cout &lt;&lt; “请输入修改后单词的中文：”;<br>​					cin &gt;&gt; lb;<br>​					s[i].cn &#x3D; lb;<br>​				}<br>​			}<br>​		}<br>​	}<br>​	}break;<br>​	case 4:<br>​	{<br>​	string mi, hc;<br>​	string mima &#x3D; “123”;<br>​	cout &lt;&lt; “请输入密码：”;<br>​	cin &gt;&gt; mi;<br>​	if (mi &#x3D;&#x3D; mima)<br>​	{<br>​		cout &lt;&lt; “请输入要删除的单词：”;<br>​		cin &gt;&gt; hc;<br>​		for (int i &#x3D; 0; i &lt;&#x3D; p; i++)<br>​		{<br>​			if (hc &#x3D;&#x3D; s[i].en)<br>​			{<br>​				string tp &#x3D; “”;<br>​				s[i].en &#x3D; tp;<br>​				s[i].cn &#x3D; tp;<br>​				cout &lt;&lt; “完成删除”;<br>​			}<br>​		}<br>​	}<br>​	}<br>​	case 5:<br>​	{<br>​		string ni;<br>​		cout &lt;&lt; “请输入查询单词英文：”;<br>​		cin &gt;&gt; ni;<br>​		for (int i &#x3D; 0; i &lt;&#x3D; p; i++)<br>​		{<br>​			if (ni &#x3D;&#x3D; s[i].en)<br>​			{<br>​				cout &lt;&lt; “查询单词的中文释义为：” &lt;&lt; s[i].cn;<br>​			}<br>​		}<br>​	}break;<br>​	case 6:<br>​	{<br>​		string no;<br>​		cout &lt;&lt; “请输入查询单词中文：”;<br>​		cin &gt;&gt; no;<br>​		for (int i &#x3D; 0; i &lt;&#x3D; p; i++)<br>​		{<br>​			if (no &#x3D;&#x3D; s[i].cn)<br>​			{<br>​				cout &lt;&lt; “查询单词的英文为：” &lt;&lt; s[i].en;<br>​			}<br>​		}<br>​	}break;<br>​	case 7:<br>​	{<br>​		remove(“dataFile.txt”);<br>​		ofstream dataFile;<br>​		dataFile.open(“dataFile.txt”, ofstream::app);<br>​		for (int i &#x3D; 0; i &lt; p; i++)<br>​		{<br>​			dataFile  &lt;&lt; s[i].en &lt;&lt; “\n”<br>​				&lt;&lt; s[i].cn &lt;&lt; endl;<br>​		}<br>​	}<br>​	}<br>}<br>return 0;</p>
-<p>}</p>
+<p>我们在设计程序的时候有没有想过数组和vector(容器)该何时用，那个更好，或是这二者到底有何区别，该如何取舍呢？在查阅一下资料后我总结如下：</p>
+<p><a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%95%B0%E7%BB%84&spm=1001.2101.3001.7020">数组</a>： 固定长度，使用栈，效率快，但没有模板，不安全，使用不方便。</p>
+<p><a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=vector&spm=1001.2101.3001.7020">vector</a>:动态长度，内部使用new和delete管理内存，效率低，但有模板，功能强大。</p>
+<h2 id="一、数组"><a href="#一、数组" class="headerlink" title="一、数组"></a>一、数组</h2><p>C++中数组是一种内置的数据类型。</p>
+<p>数组是存放类型相同的对象的容器，数组的大小确定不变，不能随意向数组中增加元素。</p>
+<p>1、定义和初始化内置数组</p>
+<p>（1）数组的大小不变，（a[d]，d为数组的维度），数组的维度必须是一个常量表达式。定义数组的时，必须指定数组的类型和大小。</p>
+<p>（2）初始化时，允许不指明数组的维度，不指明维度，则编译器根据数组初始值的大小推测出维度；若指定维度，则初始值的个数要小于等于维度，当小于时，不足的部分为0（其实还是等于维度）。</p>
+<p>1 int a[]&#x3D;{1,2,3};    &#x2F;&#x2F;数组a的大小为3；<br>2 int a[5]&#x3D;{1,2,3};    &#x2F;&#x2F;等价于{1,2,3,0,0},大小为5<br>3 int a[5]&#x3D;{1,2,3,4,5,6};    &#x2F;&#x2F;错误，初始值过多<br> 还有一种特殊的情况：字符数组。当用字符串字面值去初始化数组时，要注意字符串字面值的后面还有一个空字符。也就是说，数组的大小要等于字面值的大小加1。</p>
+<p>特别注意：不允许拷贝和赋值——不能将数组的内容拷贝给其他数组作为初始值，也不能用数组为其他数组赋值。</p>
+<p>1 int a[]&#x3D;{1,2,3};<br>2 int a2[]&#x3D;a;            &#x2F;&#x2F;错误<br>3 a2&#x3D;a;                &#x2F;&#x2F;错误</p>
+<h2 id="二、vector"><a href="#二、vector" class="headerlink" title="二、vector"></a>二、vector</h2><p>C++中vector为类模板。vector是类型相同的对象的容器，vector的大小可以变化，可以向数组中增加元素。</p>
+<p>1、定义和初始化vector对象</p>
+<p>初始化的方式比较多，有如下几种：</p>
+<p>1 vector&lt; T&gt; v1;                    &#x2F;&#x2F;v1为空，执行默认初始化<br>2 vector&lt; T&gt; v2(v1);                &#x2F;&#x2F;v2中包含v1所有元素的副本<br>3 vector&lt; T&gt; v2&#x3D;v1;                &#x2F;&#x2F;等价于v2(v1)<br>4 vector&lt; T&gt; v3(n,val);            &#x2F;&#x2F;v3中包含n个重复元素，每个元素的值都是val<br>5 vector&lt; T&gt; v4(n);                &#x2F;&#x2F;v4包含n个重复执行了值初始化的对象<br>6 vector&lt; T&gt; v5{a,b,c…};         &#x2F;&#x2F;包含初始化元素个数，每个元素被对应的赋予相应的值<br>7 vector&lt; T&gt; v5&#x3D;{a,b,c…};        &#x2F;&#x2F;等价v5{a,b,c…}<br>注意事项：</p>
+<p>（1）vector&lt; T&gt; v1，只用默认初始化时，不能通过下标进行添加元素。也就是说，当你将v1初始化为空时，假如你想向v1中添加10个元素，不能通过v1[2]&#x3D;3;等形式添加，因为，别人为空，压根不知道v1[2]是什么东东。</p>
+<p>（2）注意vector&lt; T&gt; v4(n)和vector&lt; T&gt; v4{n}的区别。前者说的是，v4中有n个相同的元素，至于值为多少要看相应对象的初始化值；而后者，则是说v4中只有一个元素，其值为n。</p>
+<p>（3）不能使用包含着多个值的括号去初始化vector对象。注意和或括号的区别。</p>
+<p>1 vector&lt; int&gt; intV(1,2,3);        &#x2F;&#x2F;错误<br> 2、向vector对象中添加对象</p>
+<p>利用vector的成员函数push_back向其中添加对象：</p>
+<p>1 vector&lt; int&gt; v;<br>2 for(int i&#x3D;0;i !&#x3D;100;++i)<br>3 {<br>4     v.push_back(i);<br>5 }<br> 注意：</p>
+<p>若是循环体内包含想vector对象添加元素的语句，则不能使用范围for循环。因为范围for语句不应改变其所遍历序列的额大小。原因如下：</p>
+<p>1 vector&lt; int&gt; v&#x3D;{1,2,3,4,5,6,7,8,9};<br> 2 for(auto &amp;r: v)<br> 3 {<br> 4     r* &#x3D;2;<br> 5 }<br> 6<br> 7 等价于<br> 8 for(auto beg&#x3D;v.begin(),end&#x3D;v.end();beg !&#x3D;end;++beg)<br> 9 {<br>10     auto &amp;r&#x3D; * beg;<br>11     r* &#x3D;2;<br>12 }<br>即在范围for语句中，预存了end()的值，一旦在序列中添加（删除）元素，end函数的值就可能变的无效了。</p>
+<p>3、vector的扩容、插入和删除</p>
+<p>（1）扩容</p>
+<p>vector的底层数据结构时数组。</p>
+<p>当vector中的可用空间耗尽时，就要动态第扩大内部数组的容量。直接在原有物理空间的基础上追加空间？这不现实。数组特定的地址方式要求，物理空间必须地址连续，而我们无法保证其尾部总是预留了足够空间可供拓展。一种方法是，申请一个容量更打的数组，并将原数组中的成员都搬迁至新空间，再在其后方进行插入操作。新数组的地址由OS分配，与原数据区没有直接的关系。新数组的容量总是取作原数组的两倍。</p>
+<p>（2）插入和删除</p>
+<p>插入给定值的过程是，先找到要插入的位置，然后将这个位置（包括这个位置）的元素向后整体移动一位，然后将该位置的元素复制为给定值。删除过程则是将该位置以后的所有元素整体前移一位。</p>
+<p>（2）vector的size和capacity</p>
+<p>size指vector容器当前拥有的元素个数，capacity指容器在必须分配新存储空间之前可以存储的元素总数，capacity总是大于或等于size的。</p>
+<p>三、数组与vector的对比</p>
+<p>1、内存中的位置</p>
+<p>C++中数组为内置的数据类型，存放在栈中，其内存的分配和释放完全由系统自动完成；vector，存放在堆中，由STL库中程序负责内存的分配和释放，使用方便。</p>
+<p>2、大小能否变化</p>
+<p>数组的大小在初始化后就固定不变，而vector可以通过push_back或pop等操作进行变化。</p>
+<p>3、初始化</p>
+<p>数组不能将数组的内容拷贝给其他数组作为初始值，也不能用数组为其他数组赋值；而向量可以。</p>
+<p>4、执行效率</p>
+<p>数组&gt;vector向量。主要原因是vector的扩容过程要消耗大量的时间。</p>
+<p>具体vector使用方法（详解 + 代码演示）：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_48508278/article/details/117368396"> vector的基本用法 （详解 + 代码演示）</a></p>
 
                 
             </div>
@@ -620,7 +637,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/alex05148/alex05148.github.io/project/%5Bobject%20Object%5D/2022/07/17/%E7%94%B5%E5%AD%90%E8%AF%8D%E5%85%B8/">https://github.com/alex05148/alex05148.github.io/project/%5Bobject%20Object%5D/2022/07/17/%E7%94%B5%E5%AD%90%E8%AF%8D%E5%85%B8/</a>
+                    <a href="https://github.com/alex05148/alex05148.github.io/project/%5Bobject%20Object%5D/2022/07/20/%E6%96%B0%E5%BB%BA%20%E6%96%87%E6%9C%AC%E6%96%87%E6%A1%A3/">https://github.com/alex05148/alex05148.github.io/project/%5Bobject%20Object%5D/2022/07/20/%E6%96%B0%E5%BB%BA%20%E6%96%87%E6%9C%AC%E6%96%87%E6%A1%A3/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -660,10 +677,6 @@
                             
                                 <a href="/tags/c/">
                                     <span class="chip bg-color">c++</span>
-                                </a>
-                            
-                                <a href="/tags/%E8%AF%BE%E8%AE%BE/">
-                                    <span class="chip bg-color">课设</span>
                                 </a>
                             
                         </div>
@@ -837,9 +850,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/%5Bobject%20Object%5D/2022/07/20/%E6%96%B0%E5%BB%BA%20%E6%96%87%E6%9C%AC%E6%96%87%E6%A1%A3/">
                     <div class="card-image">
@@ -857,9 +871,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -868,6 +882,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -886,13 +901,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/%5Bobject%20Object%5D/2022/07/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
+                <a href="/%5Bobject%20Object%5D/2022/07/17/%E7%94%B5%E5%AD%90%E8%AF%8D%E5%85%B8/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="我的第一篇博客">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="一个c++词典小程序">
                         
-                        <span class="card-title">我的第一篇博客</span>
+                        <span class="card-title">一个c++词典小程序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -903,7 +918,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-17
                             </span>
                         <span class="publish-author">
                             
@@ -916,8 +931,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%85%B3%E4%BA%8E%E6%88%91/">
-                        <span class="chip bg-color">关于我</span>
+                    <a href="/tags/c/">
+                        <span class="chip bg-color">c++</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AF%BE%E8%AE%BE/">
+                        <span class="chip bg-color">课设</span>
                     </a>
                     
                 </div>
